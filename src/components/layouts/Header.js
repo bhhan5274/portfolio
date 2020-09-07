@@ -1,0 +1,78 @@
+import React, {Fragment} from 'react';
+import logo from '../../img/logo.png'
+import { Link } from 'react-router-dom';
+
+const Header = ({mode, nav, toggleMode, toggleNav}) => {
+
+    const modeClick = () => {
+        toggleMode();
+    };
+
+    const navClick = () => {
+        toggleNav();
+    };
+
+    return (
+        <Fragment>
+            <div className={mode === true ? "header" : "header dark"}>
+                <div className="container">
+                    <ul className="header__nav">
+                        <li>
+                            <Link className="header__brand" to="/home">
+                                <img src={logo} alt="logo" className="header__logo" />
+                                &nbsp;Bhhan
+                            </Link>
+                        </li>
+                        <li className="web-link">
+                            <Link className={mode === true ? "header__link" : "header__link dark"} to="/home">
+                                Home
+                            </Link>
+                        </li>
+                        <li className="web-link">
+                            <Link className={mode === true ? "header__link" : "header__link dark"} to="/skills">
+                                Skills
+                            </Link>
+                        </li>
+                        <li className="web-link">
+                            <Link className={mode === true ? "header__link" : "header__link dark"} to="/projects">
+                                Projects
+                            </Link>
+                        </li>
+                        <li className="web-link">
+                            <div className={mode === true ? "toggle" : "toggle dark"}>
+                                <div className={mode === true ? "circle" : "circle dark move"} onClick={modeClick}>
+                                    {mode === true ? <i className="fas fa-sun" /> : <i className="fas fa-moon dark" />}
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            {mode === true ? <i className="fas fa-bars mobile-nav__toggle" onClick={navClick} /> : <i className="fas fa-bars mobile-nav__toggle dark"  onClick={navClick} />}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div className={nav === true ? "mobile-nav show" : "mobile-nav"}>
+                <i className="fas fa-times mobile-nav__close" onClick={navClick} />
+                <ul className="mobile-nav__container">
+                    <li>
+                        <Link className="mobile-nav__item" to="/home" onClick={navClick}>
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className="mobile-nav__item" to="/skills" onClick={navClick}>
+                            Skills
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className="mobile-nav__item" to="/projects" onClick={navClick}>
+                            Projects
+                        </Link>
+                    </li>
+                </ul>
+            </div>
+        </Fragment>
+    );
+};
+
+export default Header;

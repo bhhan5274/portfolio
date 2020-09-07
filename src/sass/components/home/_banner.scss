@@ -1,0 +1,124 @@
+.banner {
+  background-color: $white-secondary-color;
+
+  &.dark {
+    background-color: $dark-secondary-color;
+  }
+
+  .container {
+    display: flex;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__intro {
+    height: 400px;
+    flex: 0 0 50%;
+
+    @media only screen and (max-width: $bp-medium) {
+      flex: 0 0 70%;
+      height: 360px;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      flex: 0 0 80%;
+      height: 320px;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      flex: 0 0 95%;
+      height: 300px;
+    }
+  }
+
+  &__gallery {
+    height: 400px;
+    flex: 0 0 50%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (max-width: $bp-medium) {
+      display: none;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__subject {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 400;
+    height: 400px;
+    color: $dark-primary-color;
+    transition: all .2s ease-in-out;
+
+    @media only screen and (max-width: $bp-large) {
+      font-size: 1.9rem;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 2.3rem;
+      height: 360px;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+      height: 320px;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 1.5rem;
+      height: 300px;
+    }
+
+    div {
+      z-index: 1;
+    }
+
+    &.dark {
+      color: $white-primary-color;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    color: $primary-color;
+    font-weight: 500;
+    display: inline-block;
+    font-size: 2.5rem;
+
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 2rem;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    margin: 2.5rem 0;
+    align-items: center;
+    justify-content: center;
+
+    & > *:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+$primary-color: #eb2f64;
+$primary-light-color: #ff3366;
+$primary-dark-color: #ba265d;
+
+$white-primary-color: #FFF;
+$white-secondary-color: #EBF2F2;
+
+$dark-primary-color: #1B1F23;
+$dark-secondary-color: #262A2D;
+
+$gray-color: #666;
+
+$bp-largest: 75em; // 1200px
+$bp-large: 68.75em; // 1100px
+$bp-medium: 56.25em; // 900px
+$bp-small: 43.75em; // 700px
+$bp-smallest: 34.38em; // 550px
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.container {
+  display: block;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 2rem;
+}
