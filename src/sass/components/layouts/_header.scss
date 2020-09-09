@@ -84,7 +84,7 @@
   position: relative;
   width: 4.5rem;
   height: 1.5rem;
-  background-color: $white-secondary-color;
+  background-color: darken($white-secondary-color, 10%);
   border-radius: 3rem;
   box-shadow: inset 0 .2rem 1rem rgba($white-secondary-color, .8);
   transition: all .2s ease-in-out;
@@ -141,10 +141,20 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: $dark-primary-color;
+  background-color: $white-secondary-color;
   transform: translateY(-100%);
   transition: all .5s ease-in-out;
-  z-index: 2;
+  z-index: 5;
+
+  &__mode {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+  }
+
+  &.dark {
+    background-color: $dark-primary-color;
+  }
 
   &.show {
     transform: translateY(0);
@@ -196,11 +206,15 @@
     display: inline-block;
     font-family: 'Nunito', sans-serif;
     text-decoration: none;
-    color: $white-primary-color;
+    color: $dark-primary-color;
     font-size: 33px;
     font-weight: 700;
     padding: 10px 0;
     transition: all .2s ease-in-out;
+
+    &.dark {
+      color: $white-primary-color;
+    }
 
     @media only screen and (max-width: $bp-medium) {
       font-size: 25px;
@@ -224,9 +238,13 @@
     right: 20px;
     top: 15px;
     font-size: 2.5rem;
-    color: $white-primary-color;
+    color: $dark-primary-color;
     cursor: pointer;
     transition: all .2s ease-in-out;
+
+    &.dark {
+      color: $white-primary-color;
+    }
 
     &:hover {
       color: $primary-color;

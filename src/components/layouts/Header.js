@@ -51,21 +51,26 @@ const Header = ({mode, nav, toggleMode, toggleNav}) => {
                     </ul>
                 </div>
             </div>
-            <div className={nav === true ? "mobile-nav show" : "mobile-nav"}>
-                <i className="fas fa-times mobile-nav__close" onClick={navClick} />
+            <div className={nav === true ? ("mobile-nav show " + (mode === true ? "" : "dark")) : ("mobile-nav " + (mode === true ? "" : "dark"))}>
+                <i className={mode === true ? "fas fa-times mobile-nav__close" : "fas fa-times mobile-nav__close dark"} onClick={navClick} />
+                <div className={mode === true ? "mobile-nav__mode toggle" : "mobile-nav__mode toggle dark"}>
+                    <div className={mode === true ? "circle" : "circle dark move"} onClick={modeClick}>
+                        {mode === true ? <i className="fas fa-sun" /> : <i className="fas fa-moon dark" />}
+                    </div>
+                </div>
                 <ul className="mobile-nav__container">
                     <li>
-                        <Link className="mobile-nav__item" to="/home" onClick={navClick}>
+                        <Link className={mode === true ? "mobile-nav__item" : "mobile-nav__item dark"} to="/home" onClick={navClick}>
                             Home
                         </Link>
                     </li>
                     <li>
-                        <Link className="mobile-nav__item" to="/skills" onClick={navClick}>
+                        <Link className={mode === true ? "mobile-nav__item" : "mobile-nav__item dark"} to="/skills" onClick={navClick}>
                             Skills
                         </Link>
                     </li>
                     <li>
-                        <Link className="mobile-nav__item" to="/projects" onClick={navClick}>
+                        <Link className={mode === true ? "mobile-nav__item" : "mobile-nav__item dark"} to="/projects" onClick={navClick}>
                             Projects
                         </Link>
                     </li>

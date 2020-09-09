@@ -8,7 +8,11 @@ $white-secondary-color: #EBF2F2;
 $dark-primary-color: #1B1F23;
 $dark-secondary-color: #262A2D;
 
+$gray-dark-color: #525252;
 $gray-color: #666;
+$gray-light-color: #c0c0c0;
+
+$blue-color: #0066CC;
 
 $bp-largest: 75em; // 1200px
 $bp-large: 68.75em; // 1100px
@@ -44,4 +48,16 @@ body {
   max-width: 1200px;
   margin: auto;
   padding: 0 2rem;
+}
+
+@mixin ellipsis($line-count, $max-height, $line-height){
+  display: -webkit-box;
+  line-height: $line-height;
+  height: $max-height;
+  overflow:hidden;
+  vertical-align:top;
+  text-overflow: ellipsis;
+  word-break:break-all;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp: $line-count
 }
