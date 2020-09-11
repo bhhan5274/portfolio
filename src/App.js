@@ -11,7 +11,7 @@ import NotFound from "./components/layouts/NotFound";
 import axios from 'axios';
 import Footer from "./components/layouts/Footer";
 
-function App({mode, nav, projects, dispatch}) {
+function App({mode, nav, projects, skills, dispatch}) {
 
   const toggleMode = () => {
       dispatch({
@@ -34,7 +34,7 @@ function App({mode, nav, projects, dispatch}) {
   };
 
   useEffect(() => {
-      getProjects();
+      //getProjects();
   }, []);
 
   return (
@@ -43,7 +43,7 @@ function App({mode, nav, projects, dispatch}) {
             <Header mode={mode} nav={nav} toggleMode={toggleMode} toggleNav={toggleNav} />
             <Switch>
                 <Route exact path="/home" render={() => <Home mode={mode} projects={projects} />} />
-                <Route exact path="/skills" render={() => <Skills />} />
+                <Route exact path="/skills" render={() => <Skills mode={mode} skills={skills}/>} />
                 <Route exact path="/projects" component={() => <Projects />} />
                 <Route component={NotFound} />
             </Switch>
@@ -56,7 +56,8 @@ function App({mode, nav, projects, dispatch}) {
 const mapStateToProps = (state) => ({
     mode: state.mode,
     nav: state.nav,
-    projects: state.project
+    projects: state.project,
+    skills: state.skill
 });
 
 export default connect(mapStateToProps)(App);

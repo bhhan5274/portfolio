@@ -11,7 +11,7 @@ const Footer = ({mode}) => {
                             <a href="mailto:hbh5274@gmail.com">
                                 <i className="fas fa-envelope" />
                             </a>
-                            <a href="javascript:void(0);">
+                            <a href="#">
                                 <i className="fas fa-comment-dots"></i>
                             </a>
                             <a href="https://github.com/bhhan5274" target="_blank">

@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {Fragment} from 'react';
+import SelfIntro from "../skills/SelfIntro";
+import SkillIntro from "../skills/SkillIntro";
 
-const Skills = () => {
+const Skills = ({mode, skills}) => {
     return (
-        <div>
-            Skills
-        </div>
+        <Fragment>
+            <SelfIntro mode={mode}/>
+            <SkillIntro mode={mode} skills={skills}/>
+        </Fragment>
     );
 };
 

@@ -55,9 +55,6 @@ const SamplePrevArrow = ({className, onClick, mode}) => {
 }
 
 const Projects = ({mode, projects}) => {
-
-    console.log(projects);
-
     const settings = {
         dots: false,
         infinite: true,
