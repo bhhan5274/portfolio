@@ -89,12 +89,6 @@
     &.dark {
       border: 2px solid $dark-primary-color;
     }
-
-    &:hover {
-      h1 {
-        color: $primary-color;
-      }
-    }
   }
 
   &__content {

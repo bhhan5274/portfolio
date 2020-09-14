@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import './css/App.css';
 import {connect} from 'react-redux';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
@@ -13,44 +13,44 @@ import Footer from "./components/layouts/Footer";
 
 function App({mode, nav, projects, skills, dispatch}) {
 
-  const toggleMode = () => {
-      dispatch({
-          type: TOGGLE_MODE
-      });
-  };
+    const toggleMode = () => {
+        dispatch({
+            type: TOGGLE_MODE
+        });
+    };
 
-  const toggleNav = () => {
-      dispatch({
-          type: TOGGLE_NAV
-      });
-  };
+    const toggleNav = () => {
+        dispatch({
+            type: TOGGLE_NAV
+        });
+    };
 
-  const getProjects = async () => {
-      const res = await axios.get("http://localhost:5555/bhhan/v1/projects");
-      dispatch({
-          type: GET_PROJECTS,
-          payload: res.data
-      });
-  };
+    const getProjects = async () => {
+        const res = await axios.get("http://localhost:5555/bhhan/v1/projects");
+        dispatch({
+            type: GET_PROJECTS,
+            payload: res.data
+        });
+    };
 
-  useEffect(() => {
-      //getProjects();
-  }, []);
+    useEffect(() => {
+        //getProjects();
+    }, []);
 
-  return (
-    <Router>
-        <Fragment>
-            <Header mode={mode} nav={nav} toggleMode={toggleMode} toggleNav={toggleNav} />
-            <Switch>
-                <Route exact path="/home" render={() => <Home mode={mode} projects={projects} />} />
-                <Route exact path="/skills" render={() => <Skills mode={mode} skills={skills}/>} />
-                <Route exact path="/projects" component={() => <Projects />} />
-                <Route component={NotFound} />
-            </Switch>
-            <Footer mode={mode} />
-        </Fragment>
-    </Router>
-  );
+    return (
+        <Router>
+            <div className={mode === true ? "background" : "background dark"}>
+                <Header mode={mode} nav={nav} toggleMode={toggleMode} toggleNav={toggleNav}/>
+                <Switch>
+                    <Route exact path="/home" render={() => <Home mode={mode} projects={projects}/>}/>
+                    <Route exact path="/skills" render={() => <Skills mode={mode} skills={skills}/>}/>
+                    <Route exact path="/projects" component={() => <Projects mode={mode} projects={projects}/>}/>
+                    <Route component={NotFound}/>
+                </Switch>
+                <Footer mode={mode}/>
+            </div>
+        </Router>
+    );
 }
 
 const mapStateToProps = (state) => ({

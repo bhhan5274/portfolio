@@ -23,6 +23,17 @@ body {
   margin: auto;
   padding: 0 2rem; }
 
+#root {
+  width: 100%;
+  height: 100vh; }
+
+.background {
+  background-color: #FFF;
+  width: 100%;
+  height: 100%; }
+  .background.dark {
+    background-color: #1B1F23; }
+
 .btn {
   position: relative;
   font-family: 'Nunito', sans-serif;
@@ -571,8 +582,6 @@ body {
     cursor: pointer; }
     .projects-info__item.dark {
       border: 2px solid #1B1F23; }
-    .projects-info__item:hover h1 {
-      color: #eb2f64; }
   .projects-info__content {
     padding: 0 .7rem; }
   .projects-info__image-box {
@@ -911,3 +920,134 @@ body {
       background-color: #666; }
     .skill-intro__badge.study {
       background-color: #eb2f64; }
+
+.project-header {
+  background-color: #EBF2F2;
+  color: #262A2D;
+  font-family: 'Noto Sans KR', sans-serif; }
+  .project-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 2rem; }
+    @media only screen and (max-width: 34.38em) {
+      .project-header .container {
+        justify-content: stretch;
+        align-items: flex-start;
+        flex-direction: column; } }
+  .project-header.dark {
+    background-color: #262A2D;
+    color: #EBF2F2; }
+  .project-header__title {
+    font-size: 2rem;
+    line-height: 1.8; }
+    @media only screen and (max-width: 75em) {
+      .project-header__title {
+        font-size: 1.8rem; } }
+    @media only screen and (max-width: 43.75em) {
+      .project-header__title {
+        font-size: 1.6rem; } }
+  .project-header__text {
+    font-size: 1.8rem;
+    font-weight: 500; }
+    @media only screen and (max-width: 75em) {
+      .project-header__text {
+        font-size: 1.6rem; } }
+    @media only screen and (max-width: 43.75em) {
+      .project-header__text {
+        font-size: 1.5rem; } }
+  .project-header__number {
+    font-size: 2rem;
+    color: #eb2f64;
+    text-align: center;
+    font-weight: 400; }
+    @media only screen and (max-width: 75em) {
+      .project-header__number {
+        font-size: 1.8rem; } }
+    @media only screen and (max-width: 43.75em) {
+      .project-header__number {
+        font-size: 1.6rem; } }
+  .project-header__right {
+    padding-right: 3rem; }
+    @media only screen and (max-width: 34.38em) {
+      .project-header__right {
+        display: none; } }
+  .project-header__hidden {
+    display: none;
+    font-size: 1.2rem;
+    font-weight: 400; }
+    .project-header__hidden span {
+      color: #eb2f64; }
+    @media only screen and (max-width: 34.38em) {
+      .project-header__hidden {
+        display: block;
+        margin-top: 1rem; } }
+
+.project-body {
+  background-color: #FFF;
+  color: #1B1F23; }
+  .project-body.dark {
+    background-color: #1B1F23;
+    color: #FFF; }
+  .project-body .container {
+    padding: 5rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 3rem;
+    grid-row-gap: 5rem; }
+    @media only screen and (max-width: 750px) {
+      .project-body .container {
+        grid-template-columns: repeat(2, 1fr); } }
+    @media only screen and (max-width: 34.38em) {
+      .project-body .container {
+        grid-template-columns: 1fr;
+        padding: 2rem; } }
+
+.project-item {
+  cursor: pointer;
+  text-decoration: none;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #1B1F23;
+  transition: all .2s ease-in-out; }
+  .project-item.dark {
+    color: #FFF; }
+  .project-item__image {
+    height: 24rem; }
+    @media only screen and (max-width: 75em) {
+      .project-item__image {
+        height: 20rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .project-item__image {
+        height: 16rem; } }
+    @media only screen and (max-width: 750px) {
+      .project-item__image {
+        height: 20rem; } }
+    @media only screen and (max-width: 650px) {
+      .project-item__image {
+        height: 17rem; } }
+    @media only screen and (max-width: 34.38em) {
+      .project-item__image {
+        height: 24rem; } }
+    @media only screen and (max-width: 480px) {
+      .project-item__image {
+        height: 20rem; } }
+    .project-item__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+  .project-item__title {
+    margin: 1.5rem 0 .3rem 0;
+    font-size: 1.8rem;
+    font-weight: 500;
+    transition: all .2s ease-in-out; }
+    @media only screen and (max-width: 75em) {
+      .project-item__title {
+        font-size: 1.5rem; } }
+  .project-item__text {
+    font-size: 1.3rem;
+    line-height: 1.7; }
+    @media only screen and (max-width: 75em) {
+      .project-item__text {
+        font-size: 1.2rem; } }
