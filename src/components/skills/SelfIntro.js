@@ -11,27 +11,27 @@ const SelfIntro = ({mode}) => {
                     </div>
                     <ul className={mode === true ? "self-intro__keywords" : "self-intro__keywords dark"}>
                         <li>
-                            <i className="far fa-smile"></i>
+                            <i className="far fa-smile"/>
                             <p>개발을</p>
                             <p>즐기는</p>
                         </li>
                         <li>
-                            <i className="fas fa-book-open"></i>
+                            <i className="fas fa-book-open"/>
                             <p>꾸준한</p>
                             <p>자기계발</p>
                         </li>
                         <li>
-                            <i className="fas fa-arrows-alt-h"></i>
+                            <i className="fas fa-arrows-alt-h"/>
                             <p>다양한</p>
                             <p>개발경험</p>
                         </li>
                         <li>
-                            <i className="fas fa-search"></i>
+                            <i className="fas fa-search"/>
                             <p>문제의식</p>
                             <p>해결과정</p>
                         </li>
                         <li>
-                            <i className="far fa-handshake"></i>
+                            <i className="far fa-handshake"/>
                             <p>핵심가치</p>
                             <p>신뢰</p>
                         </li>

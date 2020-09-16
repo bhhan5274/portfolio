@@ -38,7 +38,7 @@ const SkillItem = ({name, path, use, description, mode}) => {
 
 const SkillIntro = ({mode, skills}) => {
     function getItems(type) {
-        return skills.filter(skill => skill.type === type).map(skill => <SkillItem mode={mode} {...skill} key={skill.id}/>);
+        return skills ? skills.filter(skill => skill.type === type).map(skill => <SkillItem mode={mode} {...skill} key={skill.id}/>) : "";
     }
 
     return (

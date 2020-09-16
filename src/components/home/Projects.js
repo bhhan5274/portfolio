@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import {Link} from 'react-router-dom';
 
-const CustomSlide = ({id, description, images, member, skills, timeRange, title, mode}) => {
+const CustomSlide = ({id, images, member, skills, timeRange, title, mode}) => {
     return (
         <Link className={"projects-info__item " + (mode === true ? "" : "dark")}>
             <div className="projects-info__image-box">
@@ -23,8 +23,8 @@ const CustomSlide = ({id, description, images, member, skills, timeRange, title,
                     </span>
                 </div>
                 <ul className={"projects-info__skills " + (mode === true ? "" : "dark")}>
-                    {skills.map(skill => (
-                        <li className="projects-info__skill">
+                    {skills.map((skill, index) => (
+                        <li className="projects-info__skill" key={index}>
                             <div>
                                 <img src={skill.path} alt="skill" />
                             </div>
@@ -99,9 +99,9 @@ const Projects = ({mode, projects}) => {
         <section className={mode === true ? "projects-info" : "projects-info dark"}>
             <div className="container">
                 <h1 className={mode === true ? "projects-info__subject" : "projects-info__subject dark"}>What I Made</h1>
-                <Slider {...settings}>
-                    {projects.map((project, index) => <CustomSlide {...project} mode={mode} key={index}/>)}
-                </Slider>
+                {projects ? <Slider {...settings}>
+                    {projects.content.map((project, index) => <CustomSlide {...project} mode={mode} key={index}/>)}
+                </Slider> : <div>Projects Read Error!!!</div>}
             </div>
         </section>
     );

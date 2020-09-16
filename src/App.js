@@ -1,17 +1,16 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import './css/App.css';
 import {connect} from 'react-redux';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Header from "./components/layouts/Header";
-import {GET_PROJECTS, TOGGLE_MODE, TOGGLE_NAV} from "./actions/types";
+import {TOGGLE_MODE, TOGGLE_NAV} from "./actions/types";
 import Home from "./components/pages/Home";
 import Skills from "./components/pages/Skills";
 import Projects from "./components/pages/Projects";
 import NotFound from "./components/layouts/NotFound";
-import axios from 'axios';
 import Footer from "./components/layouts/Footer";
 
-function App({mode, nav, projects, skills, dispatch}) {
+function App({mode, nav, dispatch}) {
 
     const toggleMode = () => {
         dispatch({
@@ -25,26 +24,14 @@ function App({mode, nav, projects, skills, dispatch}) {
         });
     };
 
-    const getProjects = async () => {
-        const res = await axios.get("http://localhost:5555/bhhan/v1/projects");
-        dispatch({
-            type: GET_PROJECTS,
-            payload: res.data
-        });
-    };
-
-    useEffect(() => {
-        //getProjects();
-    }, []);
-
     return (
         <Router>
             <div className={mode === true ? "background" : "background dark"}>
                 <Header mode={mode} nav={nav} toggleMode={toggleMode} toggleNav={toggleNav}/>
                 <Switch>
-                    <Route exact path="/home" render={() => <Home mode={mode} projects={projects}/>}/>
-                    <Route exact path="/skills" render={() => <Skills mode={mode} skills={skills}/>}/>
-                    <Route exact path="/projects" component={() => <Projects mode={mode} projects={projects}/>}/>
+                    <Route exact path="/home" render={() => <Home />}/>
+                    <Route exact path="/skills" render={() => <Skills />}/>
+                    <Route exact path="/projects" render={() => <Projects />}/>
                     <Route component={NotFound}/>
                 </Switch>
                 <Footer mode={mode}/>
@@ -55,9 +42,7 @@ function App({mode, nav, projects, skills, dispatch}) {
 
 const mapStateToProps = (state) => ({
     mode: state.mode,
-    nav: state.nav,
-    projects: state.project,
-    skills: state.skill
+    nav: state.nav
 });
 
 export default connect(mapStateToProps)(App);

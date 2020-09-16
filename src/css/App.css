@@ -580,13 +580,28 @@ body {
     justify-content: flex-start;
     font-family: 'Nunito', sans-serif;
     cursor: pointer; }
+    .projects-info__item:hover .projects-info__image-box::before {
+      opacity: 1; }
     .projects-info__item.dark {
       border: 2px solid #1B1F23; }
   .projects-info__content {
     padding: 0 .7rem; }
   .projects-info__image-box {
-    height: 15rem; }
+    height: 15rem;
+    position: relative; }
+    .projects-info__image-box::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(242, 242, 242, 0.3);
+      z-index: 2;
+      opacity: 0;
+      transition: all .2s ease-in-out; }
   .projects-info__image {
+    position: relative;
     width: 100%;
     height: 100%;
     object-fit: cover; }
@@ -1013,8 +1028,22 @@ body {
   transition: all .2s ease-in-out; }
   .project-item.dark {
     color: #FFF; }
+  .project-item:hover .project-item__image::before {
+    opacity: 1; }
   .project-item__image {
-    height: 24rem; }
+    height: 24rem;
+    position: relative; }
+    .project-item__image::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(242, 242, 242, 0.3);
+      z-index: 2;
+      opacity: 0;
+      transition: all .2s ease-in-out; }
     @media only screen and (max-width: 75em) {
       .project-item__image {
         height: 20rem; } }
@@ -1051,3 +1080,47 @@ body {
     @media only screen and (max-width: 75em) {
       .project-item__text {
         font-size: 1.2rem; } }
+
+.paging {
+  background-color: #FFF; }
+  .paging.dark {
+    background-color: #1B1F23; }
+  .paging .container {
+    padding: 6rem 2rem 2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .paging .container > *:not(:last-child) {
+      margin-right: 1rem; }
+      @media only screen and (max-width: 34.38em) {
+        .paging .container > *:not(:last-child) {
+          margin-right: .5rem; } }
+  .paging__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    font-family: 'Nunito', sans-serif;
+    background-color: #FFF;
+    border: 1px solid #c0c0c0;
+    border-radius: 2px;
+    color: #666;
+    cursor: pointer;
+    outline: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition: all .2s ease-in-out; }
+    @media only screen and (max-width: 56.25em) {
+      .paging__icon {
+        font-size: 1.4rem; } }
+    @media only screen and (max-width: 34.38em) {
+      .paging__icon {
+        font-size: 1.3rem; } }
+    .paging__icon:hover {
+      box-shadow: inset 0 0 3rem #dadada; }
+    .paging__icon.active {
+      background-color: #0066CC;
+      color: #FFF; }
+      .paging__icon.active:hover {
+        box-shadow: inset 0 0 3rem #0080ff; }
