@@ -588,6 +588,7 @@ body {
     padding: 0 .7rem; }
   .projects-info__image-box {
     height: 15rem;
+    width: 100%;
     position: relative; }
     .projects-info__image-box::before {
       position: absolute;
@@ -610,7 +611,7 @@ body {
     font-size: 1.5rem;
     display: -webkit-box;
     line-height: 1.4;
-    height: 7rem;
+    height: 6rem;
     overflow: hidden;
     vertical-align: top;
     text-overflow: ellipsis;
@@ -618,6 +619,17 @@ body {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     color: #1B1F23; }
+    @media only screen and (max-width: 34.38em) {
+      .projects-info__title {
+        display: -webkit-box;
+        line-height: 1.4;
+        height: 4rem;
+        overflow: hidden;
+        vertical-align: top;
+        text-overflow: ellipsis;
+        word-break: break-all;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2; } }
     .projects-info__title.dark {
       color: #FFF; }
     .projects-info__title h1 {
@@ -625,10 +637,9 @@ body {
   .projects-info__detail {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     flex-wrap: wrap;
-    align-content: space-around;
-    height: 5rem; }
+    align-content: space-around; }
   .projects-info__period {
     margin-right: 2rem; }
   .projects-info__period, .projects-info__member {
@@ -667,7 +678,7 @@ body {
     margin-bottom: 1rem;
     flex-wrap: wrap; }
     .projects-info__skills > *:not(:last-child) {
-      margin-right: .3rem; }
+      margin-right: -.6rem; }
     .projects-info__skills div {
       overflow: hidden;
       width: 3rem;

@@ -57,7 +57,7 @@ const SamplePrevArrow = ({className, onClick, mode}) => {
 const Projects = ({mode, projects}) => {
     const settings = {
         dots: false,
-        infinite: true,
+        infinite: false,
         speed: 800,
         slidesToShow: 4,
         slidesToScroll: 1,
@@ -71,7 +71,7 @@ const Projects = ({mode, projects}) => {
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 1,
-                    infinite: true,
+                    infinite: false,
                     dots: false
                 }
             },
@@ -80,7 +80,7 @@ const Projects = ({mode, projects}) => {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
-                    infinite: true,
+                    infinite: false,
                     dots: false
                 }
             },
