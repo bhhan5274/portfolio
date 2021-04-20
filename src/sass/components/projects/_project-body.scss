@@ -30,7 +30,7 @@
   text-decoration: none;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Nunito', sans-serif;
   color: $dark-primary-color;
   transition: all .2s ease-in-out;
 
@@ -113,4 +113,36 @@
       font-size: 1.2rem;
     }
   }
+
+  &__skills {
+    display: flex;
+    flex-wrap: wrap;
+
+    *:not(:last-child) {
+      margin-right: .6rem;
+    }
+  }
+
+  &__skill {
+    list-style: none;
+    padding: .4rem .8rem;
+    color: white !important;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 3px;
+    margin: .6rem 0;
+  }
+}
+
+.work {
+  background-color: $blue-color !important;
+}
+
+.toy {
+  background-color: $gray-color !important;
+}
+
+.study {
+  background-color: $primary-color !important;
 }

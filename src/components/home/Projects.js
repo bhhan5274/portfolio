@@ -4,13 +4,13 @@ import {Link} from 'react-router-dom';
 
 const CustomSlide = ({id, images, member, skills, timeRange, title, mode}) => {
     return (
-        <Link className={"projects-info__item " + (mode === true ? "" : "dark")}>
+        <Link className={"projects-info__item " + (mode === true ? "" : "dark")} to={`/projects/${id}`}>
             <div className="projects-info__image-box">
                 <img className="projects-info__image" src={images[0].path} alt="image"/>
             </div>
             <div className="projects-info__content">
                 <div className={"projects-info__title " + (mode === true ? "" : "dark")}>
-                    <h1>{title}</h1>
+                    <p>{title}</p>
                 </div>
                 <div className="projects-info__detail">
                     <span className={"projects-info__period " + (mode === true ? "" : "dark")}>
@@ -55,13 +55,14 @@ const SamplePrevArrow = ({className, onClick, mode}) => {
 }
 
 const Projects = ({mode, projects}) => {
+    const infinite = projects !== null && projects.content.length > 4;
     const settings = {
         dots: false,
-        infinite: false,
+        infinite: infinite,
         speed: 800,
         slidesToShow: 4,
         slidesToScroll: 1,
-        autoplaySpeed: 4000,
+        autoplaySpeed: 3000,
         autoplay: true,
         nextArrow: <SampleNextArrow mode={mode} />,
         prevArrow: <SamplePrevArrow mode={mode} />,
@@ -71,7 +72,7 @@ const Projects = ({mode, projects}) => {
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 1,
-                    infinite: false,
+                    infinite: infinite,
                     dots: false
                 }
             },
@@ -80,7 +81,7 @@ const Projects = ({mode, projects}) => {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
-                    infinite: false,
+                    infinite: infinite,
                     dots: false
                 }
             },
@@ -89,7 +90,7 @@ const Projects = ({mode, projects}) => {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    infinite: true,
+                    infinite: infinite,
                     dots: false
                 }
             }
@@ -98,10 +99,13 @@ const Projects = ({mode, projects}) => {
     return (
         <section className={mode === true ? "projects-info" : "projects-info dark"}>
             <div className="container">
-                <h1 className={mode === true ? "projects-info__subject" : "projects-info__subject dark"}>What I Made</h1>
+                <div style={{display: 'flex', alignItems: 'center'}}>
+                    <h1 className={mode === true ? "projects-info__subject" : "projects-info__subject dark"}>What I Made</h1>
+                    <Link className={mode === true ? "btn" : "btn dark"} to="/projects" style={{margin: '0 0 2.5rem 2.5rem'}}>VIEW PROJECTS</Link>
+                </div>
                 {projects ? <Slider {...settings}>
                     {projects.content.map((project, index) => <CustomSlide {...project} mode={mode} key={index}/>)}
-                </Slider> : <div>Projects Read Error!!!</div>}
+                </Slider> : ''}
             </div>
         </section>
     );

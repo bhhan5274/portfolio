@@ -7,22 +7,10 @@
   }
 
   &__subject {
-    font-size: 3.5rem;
+    font-size: 2.4rem;
     font-family: 'Nunito', sans-serif;
     margin-bottom: 2.5rem;
     color: $dark-primary-color;
-
-    @media only screen and (max-width: $bp-large) {
-      font-size: 2.8rem;
-    }
-
-    @media only screen and (max-width: $bp-small) {
-      font-size: 2.6rem;
-    }
-
-    @media only screen and (max-width: $bp-smallest) {
-      font-size: 2.4rem;
-    }
 
     &.dark {
       color: $white-secondary-color;
@@ -130,13 +118,13 @@
   }
 
   &__title {
-    margin: .8rem 0 0 0;
-    font-size: 1.5rem;
-    @include ellipsis(2, 6rem, 1.4);
+    margin: .8rem 0;
+    font-size: 1.8rem;
+    @include ellipsis(2, 1.4);
     color: $dark-primary-color;
 
     @media only screen and (max-width: $bp-smallest) {
-      @include ellipsis(2, 4rem, 1.4);
+      @include ellipsis(2, 1.4);
     }
 
     &.dark {
@@ -151,7 +139,6 @@
   &__detail {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 1rem;
     flex-wrap: wrap;
     align-content: space-around;
   }
@@ -162,6 +149,7 @@
 
   &__period, &__member {
     display: flex;
+    margin-bottom: .6rem;
     align-items: center;
     font-weight: 700;
     font-size: 1.3rem;

@@ -12,7 +12,7 @@ html {
   font-size: 62.5%; }
 
 body {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-weight: 400;
   line-height: 1.6;
   min-height: 100vh; }
@@ -37,13 +37,14 @@ body {
 .btn {
   position: relative;
   font-family: 'Nunito', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #1B1F23;
   text-decoration: none;
   font-weight: 800;
   border: 2px solid #1B1F23;
   border-radius: 2px;
-  padding: 1.5rem;
+  z-index: 1;
+  padding: .8rem 1.2rem;
   cursor: pointer;
   outline: none;
   transition: color .2s ease-in-out, border .2s ease-in-out, background-color .2s ease-out .1s; }
@@ -65,7 +66,7 @@ body {
     z-index: -1;
     transition: width .2s ease-out .1s; }
   .btn.dark::after {
-    background-color: #FFF; }
+    background-color: #FFF !important; }
   .btn:hover::after {
     width: 100%; }
 
@@ -78,7 +79,7 @@ body {
   .header.dark {
     background-color: #1B1F23; }
   .header__logo {
-    width: 65px; }
+    width: 50px; }
     @media only screen and (max-width: 68.75em) {
       .header__logo {
         width: 55px; } }
@@ -91,15 +92,11 @@ body {
     align-items: flex-start;
     color: #eb2f64;
     text-decoration: none;
-    font-size: 3rem;
+    font-size: 2.3rem;
     font-family: 'Nunito', sans-serif;
     font-weight: 700; }
-    @media only screen and (max-width: 68.75em) {
-      .header__brand {
-        font-size: 2.5rem; } }
     @media only screen and (max-width: 56.25em) {
       .header__brand {
-        font-size: 2.5rem;
         align-items: center;
         margin-left: 0; } }
   .header__link {
@@ -345,65 +342,67 @@ body {
     display: flex;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem; }
+    @media only screen and (max-width: 68.75em) {
+      .banner .container {
+        display: block;
+        position: relative;
+        overflow: hidden; } }
     @media only screen and (max-width: 56.25em) {
       .banner .container {
         align-items: center;
         justify-content: center; } }
   .banner__intro {
-    height: 400px;
-    flex: 0 0 50%; }
-    @media only screen and (max-width: 56.25em) {
+    height: 322px;
+    flex: 1; }
+    @media only screen and (max-width: 68.75em) {
       .banner__intro {
-        flex: 0 0 75%;
-        height: 360px; } }
-    @media only screen and (max-width: 43.75em) {
-      .banner__intro {
-        flex: 0 0 80%;
-        height: 320px; } }
-    @media only screen and (max-width: 34.38em) {
-      .banner__intro {
-        flex: 0 0 95%;
-        height: 300px; } }
+        position: relative;
+        z-index: 2; } }
   .banner__gallery {
-    height: 400px;
-    flex: 0 0 50%;
-    padding: 2rem;
+    height: 322px;
+    flex: 0 0 60%;
     display: flex;
     align-items: center;
     justify-content: center; }
+    @media only screen and (max-width: 68.75em) {
+      .banner__gallery {
+        position: absolute;
+        right: -5%;
+        top: 10%;
+        z-index: 1; } }
     @media only screen and (max-width: 56.25em) {
+      .banner__gallery {
+        right: -15%;
+        top: 15%; } }
+    @media only screen and (max-width: 43.75em) {
+      .banner__gallery {
+        right: -40%;
+        top: 35%; } }
+    @media only screen and (max-width: 34.38em) {
       .banner__gallery {
         display: none; } }
   .banner__image {
     width: 100%;
     height: 100%;
     object-fit: cover; }
+    @media only screen and (max-width: 68.75em) {
+      .banner__image {
+        opacity: .3; } }
   .banner__subject {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 2.5rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: 2.1rem;
+    font-weight: bold;
     display: flex;
     align-items: start;
     flex-direction: column;
     justify-content: center;
-    font-weight: 400;
-    height: 400px;
+    height: 322px;
     color: #1B1F23;
     transition: all .2s ease-in-out; }
-    @media only screen and (max-width: 68.75em) {
-      .banner__subject {
-        font-size: 1.9rem; } }
-    @media only screen and (max-width: 56.25em) {
-      .banner__subject {
-        font-size: 2.3rem;
-        height: 360px; } }
-    @media only screen and (max-width: 43.75em) {
-      .banner__subject {
-        font-size: 1.8rem;
-        height: 320px; } }
     @media only screen and (max-width: 34.38em) {
       .banner__subject {
-        font-size: 1.5rem;
-        height: 300px; } }
+        align-items: center;
+        font-size: 1.8rem; } }
     .banner__subject div {
       z-index: 1; }
     .banner__subject.dark {
@@ -413,19 +412,9 @@ body {
       align-items: center; }
   .banner__title {
     color: #eb2f64;
-    font-weight: 500;
+    font-weight: bold;
     display: inline-block;
-    font-size: 2.5rem; }
-    @media only screen and (max-width: 34.38em) {
-      .banner__title {
-        font-size: 2rem; } }
-  .banner__buttons {
-    display: flex;
-    margin: 2.5rem 0;
-    align-items: center;
-    justify-content: center; }
-    .banner__buttons > *:not(:last-child) {
-      margin-right: 2rem; }
+    font-size: 2.1rem; }
 
 .skills-info {
   background-color: #FFF;
@@ -433,19 +422,10 @@ body {
   .skills-info.dark {
     background-color: #1B1F23; }
   .skills-info__title {
-    font-size: 3.5rem;
+    font-size: 2.4rem;
     font-family: 'Nunito', sans-serif;
     margin-bottom: 2.5rem;
     color: #1B1F23; }
-    @media only screen and (max-width: 68.75em) {
-      .skills-info__title {
-        font-size: 2.8rem; } }
-    @media only screen and (max-width: 43.75em) {
-      .skills-info__title {
-        font-size: 2.6rem; } }
-    @media only screen and (max-width: 34.38em) {
-      .skills-info__title {
-        font-size: 2.4rem; } }
     .skills-info__title.dark {
       color: #EBF2F2; }
   .skills-info__box {
@@ -471,7 +451,6 @@ body {
     align-items: center;
     justify-content: flex-start;
     font-family: 'Nunito', sans-serif;
-    cursor: pointer;
     transition: transform .2s ease-in-out; }
     @media only screen and (max-width: 75em) {
       .skills-info__item {
@@ -493,7 +472,7 @@ body {
     .skills-info__item h1 {
       color: #1B1F23;
       font-weight: 800;
-      font-size: 2.2rem;
+      font-size: 2rem;
       margin: 2.5rem 0 1.5rem 0;
       transition: all .2s ease-in-out; }
     .skills-info__item p {
@@ -524,19 +503,10 @@ body {
   .projects-info.dark {
     background-color: #262A2D; }
   .projects-info__subject {
-    font-size: 3.5rem;
+    font-size: 2.4rem;
     font-family: 'Nunito', sans-serif;
     margin-bottom: 2.5rem;
     color: #1B1F23; }
-    @media only screen and (max-width: 68.75em) {
-      .projects-info__subject {
-        font-size: 2.8rem; } }
-    @media only screen and (max-width: 43.75em) {
-      .projects-info__subject {
-        font-size: 2.6rem; } }
-    @media only screen and (max-width: 34.38em) {
-      .projects-info__subject {
-        font-size: 2.4rem; } }
     .projects-info__subject.dark {
       color: #EBF2F2; }
   .projects-info__prev, .projects-info__next {
@@ -607,11 +577,10 @@ body {
     height: 100%;
     object-fit: cover; }
   .projects-info__title {
-    margin: .8rem 0 0 0;
-    font-size: 1.5rem;
+    margin: .8rem 0;
+    font-size: 1.8rem;
     display: -webkit-box;
     line-height: 1.4;
-    height: 6rem;
     overflow: hidden;
     vertical-align: top;
     text-overflow: ellipsis;
@@ -623,7 +592,6 @@ body {
       .projects-info__title {
         display: -webkit-box;
         line-height: 1.4;
-        height: 4rem;
         overflow: hidden;
         vertical-align: top;
         text-overflow: ellipsis;
@@ -637,13 +605,13 @@ body {
   .projects-info__detail {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 1rem;
     flex-wrap: wrap;
     align-content: space-around; }
   .projects-info__period {
     margin-right: 2rem; }
   .projects-info__period, .projects-info__member {
     display: flex;
+    margin-bottom: .6rem;
     align-items: center;
     font-weight: 700;
     font-size: 1.3rem;
@@ -695,21 +663,20 @@ body {
 .self-intro {
   background-color: #EBF2F2;
   padding: 5rem 0;
-  font-family: 'Noto Sans KR', sans-serif; }
+  font-family: 'Nunito', sans-serif; }
   .self-intro.dark {
     background-color: #262A2D; }
   .self-intro__title {
     margin-bottom: 2.5rem; }
     .self-intro__title h3 {
-      font-size: 2.5rem;
-      font-weight: 400;
+      font-size: 2rem;
       color: #262A2D; }
       @media only screen and (max-width: 68.75em) {
         .self-intro__title h3 {
-          font-size: 2.2rem; } }
+          font-size: 1.8rem; } }
       @media only screen and (max-width: 34.38em) {
         .self-intro__title h3 {
-          font-size: 1.9rem; } }
+          font-size: 1.7rem; } }
     .self-intro__title.dark h3 {
       color: #EBF2F2; }
   .self-intro__keywords {
@@ -790,7 +757,7 @@ body {
           margin-right: 3.5rem; } }
   .self-intro__introduce {
     padding-top: 5rem;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Nunito', sans-serif;
     color: #262A2D; }
     .self-intro__introduce.dark {
       color: #EBF2F2; }
@@ -806,7 +773,7 @@ body {
 .skill-intro {
   background-color: #FFF;
   padding: 5rem 0;
-  font-family: 'Noto Sans KR', sans-serif; }
+  font-family: 'Nunito', sans-serif; }
   @media only screen and (max-width: 56.25em) {
     .skill-intro .container > *:not(:last-child) {
       margin-bottom: 8rem; }
@@ -868,7 +835,7 @@ body {
         .skill-intro__left div h5 {
           font-size: 1.8rem; } }
     .skill-intro__left div p {
-      font-family: 'Noto Sans KR', sans-serif;
+      font-family: 'Nunito', sans-serif;
       font-size: 1.6rem;
       font-weight: 300; }
       @media only screen and (max-width: 68.75em) {
@@ -912,7 +879,7 @@ body {
         font-size: 1.6rem;
         margin-right: .5rem; }
     .skill-intro__content p {
-      font-family: 'Noto Sans KR', sans-serif;
+      font-family: 'Nunito', sans-serif;
       font-size: 1.3rem; }
       @media only screen and (max-width: 68.75em) {
         .skill-intro__content p {
@@ -950,7 +917,7 @@ body {
 .project-header {
   background-color: #EBF2F2;
   color: #262A2D;
-  font-family: 'Noto Sans KR', sans-serif; }
+  font-family: 'Nunito', sans-serif; }
   .project-header .container {
     display: flex;
     justify-content: space-between;
@@ -1034,7 +1001,7 @@ body {
   text-decoration: none;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Nunito', sans-serif;
   color: #1B1F23;
   transition: all .2s ease-in-out; }
   .project-item.dark {
@@ -1091,6 +1058,29 @@ body {
     @media only screen and (max-width: 75em) {
       .project-item__text {
         font-size: 1.2rem; } }
+  .project-item__skills {
+    display: flex;
+    flex-wrap: wrap; }
+    .project-item__skills *:not(:last-child) {
+      margin-right: .6rem; }
+  .project-item__skill {
+    list-style: none;
+    padding: .4rem .8rem;
+    color: white !important;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 3px;
+    margin: .6rem 0; }
+
+.work {
+  background-color: #0066CC !important; }
+
+.toy {
+  background-color: #666 !important; }
+
+.study {
+  background-color: #eb2f64 !important; }
 
 .paging {
   background-color: #FFF; }
@@ -1135,3 +1125,15 @@ body {
       color: #FFF; }
       .paging__icon.active:hover {
         box-shadow: inset 0 0 3rem #0080ff; }
+
+.gallery__image {
+  height: 20rem;
+  cursor: pointer;
+  outline: none;
+  transition: opacity .25s ease-in-out; }
+  .gallery__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+  .gallery__image:hover {
+    opacity: .7; }

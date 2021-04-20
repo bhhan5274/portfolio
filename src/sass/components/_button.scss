@@ -1,13 +1,14 @@
 .btn {
   position: relative;
   font-family: 'Nunito', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: $dark-primary-color;
   text-decoration: none;
   font-weight: 800;
   border: 2px solid $dark-primary-color;
   border-radius: 2px;
-  padding: 1.5rem;
+  z-index: 1;
+  padding: .8rem 1.2rem;
   cursor: pointer;
   outline: none;
   transition: color .2s ease-in-out,
@@ -40,7 +41,7 @@
   }
 
   &.dark::after {
-    background-color: $white-primary-color;
+    background-color: $white-primary-color !important;
   }
 
   &:hover::after {

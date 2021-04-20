@@ -24,10 +24,6 @@ const Banner = ({mode}) => {
                         <p>마이크로서비스와 DevOps에 관심이 많습니다.</p>
                         <p>임베디드 > 응용프로그램 > 웹개발을 합니다.</p>
                         <p>항상 많이 배우겠습니다.</p>
-                        <div className="banner__buttons">
-                            <Link className={mode === true ? "btn" : "btn dark"} to="/skills">GO SKILLS</Link>
-                            <Link className={mode === true ? "btn" : "btn dark"} to="/projects">VIEW PROJECTS</Link>
-                        </div>
                     </div>
                 </div>
                 <div className="banner__gallery">

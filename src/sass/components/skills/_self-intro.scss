@@ -1,7 +1,7 @@
 .self-intro {
   background-color: $white-secondary-color;
   padding: 5rem 0;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Nunito', sans-serif;
 
   &.dark {
     background-color: $dark-secondary-color;
@@ -14,17 +14,16 @@
     margin-bottom: 2.5rem;
 
     h3 {
-      font-size: 2.5rem;
+      font-size: 2rem;
 
       @media only screen and (max-width: $bp-large) {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
       }
 
       @media only screen and (max-width: $bp-smallest) {
-        font-size: 1.9rem;
+        font-size: 1.7rem;
       }
 
-      font-weight: 400;
       color: $dark-secondary-color;
     }
 
@@ -141,7 +140,7 @@
 
   &__introduce {
     padding-top: 5rem;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Nunito', sans-serif;
     color: $dark-secondary-color;
 
     &.dark {

@@ -38,7 +38,7 @@ const Projects = ({mode, dispatch, projects}) => {
 
 const mapStateToProps = (state) => ({
     mode: state.mode,
-    projects: state.project
+    projects: state.projects
 });
 
 export default connect(mapStateToProps)(Projects);

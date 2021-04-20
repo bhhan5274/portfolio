@@ -22,20 +22,21 @@ const makePaging = (projects, getPageProjects) => {
 
     let currentNumber = projects.number + 1;
     let lastNumber = projects.totalPages;
+    let key = 0;
 
-    pagingItems.push(<PagingUtilIcon number={1} type="fas fa-angle-double-left" getPageProjects={getPageProjects} />);
-    pagingItems.push(<PagingUtilIcon number={currentNumber > 1 ? currentNumber - 1 : 1} type="fas fa-angle-left" getPageProjects={getPageProjects} />);
+    pagingItems.push(<PagingUtilIcon number={1} type="fas fa-angle-double-left" getPageProjects={getPageProjects} key={key++}/>);
+    pagingItems.push(<PagingUtilIcon number={currentNumber > 1 ? currentNumber - 1 : 1} type="fas fa-angle-left" getPageProjects={getPageProjects} key={key++}/>);
 
     for(let i = 1; i <= projects.totalPages; i++){
         let current = false;
         if(projects.number + 1 === i){
             current = true;
         }
-        pagingItems.push(<PagingIcon key={i} number={i} current={current} getPageProjects={getPageProjects} />);
+        pagingItems.push(<PagingIcon key={i} number={i} current={current} getPageProjects={getPageProjects} key={key++}/>);
     }
 
-    pagingItems.push(<PagingUtilIcon number={lastNumber > currentNumber ? currentNumber + 1 : currentNumber} type="fas fa-angle-right" getPageProjects={getPageProjects} />);
-    pagingItems.push(<PagingUtilIcon number={lastNumber} type="fas fa-angle-double-right" getPageProjects={getPageProjects} />);
+    pagingItems.push(<PagingUtilIcon number={lastNumber > currentNumber ? currentNumber + 1 : currentNumber} type="fas fa-angle-right" getPageProjects={getPageProjects} key={key++}/>);
+    pagingItems.push(<PagingUtilIcon number={lastNumber} type="fas fa-angle-double-right" getPageProjects={getPageProjects} key={key++}/>);
 
     return pagingItems;
 };

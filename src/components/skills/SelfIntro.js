@@ -7,7 +7,7 @@ const SelfIntro = ({mode}) => {
                 <div>
                     <div className={mode === true ? "self-intro__title" : "self-intro__title dark"}>
                         <h3>웹 브라우저로 사람을 연결하는 개발자</h3>
-                        <h3>한병호에 대해 알아보세요!</h3>
+                        <h3>Bhhan에 대해 알아보세요!</h3>
                     </div>
                     <ul className={mode === true ? "self-intro__keywords" : "self-intro__keywords dark"}>
                         <li>
