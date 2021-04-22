@@ -1,7 +1,7 @@
 import React from 'react'
 import Slider from "react-slick";
 
-const ProjectGallery = ({mode, project}) => {
+const ProjectGallery = ({project, setImage}) => {
     const infinite = project !== null && project.images.length > 3;
     const settings = {
         dots: false,
@@ -13,15 +13,6 @@ const ProjectGallery = ({mode, project}) => {
         arrows: false,
         autoplay: true,
         responsive: [
-            {
-                breakpoint: 1050,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    infinite: infinite,
-                    dots: false
-                }
-            },
             {
                 breakpoint: 770,
                 settings: {
@@ -48,7 +39,7 @@ const ProjectGallery = ({mode, project}) => {
             {project ? <Slider {...settings}>
                 {project.images.map((image) => {
                     return (
-                        <div key={image.id} className="gallery__image">
+                        <div key={image.id} className="gallery__image" onClick={() => setImage(image.path)}>
                             <img src={image.path} alt='image' />
                         </div>
                     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import removeDayFromDate from "../../utils/removeDayFromDate";
 
 const ProjectItem = ({mode, project}) => {
     const skills = project.skills.map(skill => {
@@ -26,7 +27,7 @@ const ProjectItem = ({mode, project}) => {
             <ul className="project-item__skills">
                 {skills}
             </ul>
-            <p className="project-item__text">{project.timeRange.startDate} ~ {project.timeRange.endDate}</p>
+            <p className="project-item__text">{removeDayFromDate(project.timeRange.startDate)} ~ {removeDayFromDate(project.timeRange.endDate)}</p>
         </Link>
     );
 };

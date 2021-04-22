@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import {Link} from 'react-router-dom';
+import removeDayFromDate from "../../utils/removeDayFromDate";
 
 const CustomSlide = ({id, images, member, skills, timeRange, title, mode}) => {
     return (
@@ -15,7 +16,7 @@ const CustomSlide = ({id, images, member, skills, timeRange, title, mode}) => {
                 <div className="projects-info__detail">
                     <span className={"projects-info__period " + (mode === true ? "" : "dark")}>
                         <i className="fas fa-calendar" />
-                        &nbsp;&nbsp;{timeRange.startDate} ~ {timeRange.endDate}
+                        &nbsp;&nbsp;{removeDayFromDate(timeRange.startDate)} ~ {removeDayFromDate(timeRange.endDate)}
                     </span>
                     <span className={"projects-info__member " + (mode === true ? "" : "dark")}>
                         <i className="fas fa-user-friends" />

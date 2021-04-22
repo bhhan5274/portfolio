@@ -34,6 +34,26 @@ body {
   .background.dark {
     background-color: #1B1F23; }
 
+.backdrop {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); }
+  .backdrop img {
+    display: block;
+    width: 50vw;
+    height: 30vw;
+    margin: 60px auto;
+    box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
+    border: 3px solid white; }
+    @media only screen and (max-width: 1200px) {
+      .backdrop img {
+        width: 90vw;
+        height: 50vw; } }
+
 .btn {
   position: relative;
   font-family: 'Nunito', sans-serif;
@@ -638,7 +658,7 @@ body {
       width: 2rem;
       height: 2rem;
       background-color: #0066CC;
-      border-radius: 50%; }
+      border-radius: 3px; }
   .projects-info__skills {
     list-style: none;
     display: flex;
@@ -1137,3 +1157,114 @@ body {
     object-fit: cover; }
   .gallery__image:hover {
     opacity: .7; }
+
+.contents-header {
+  background-color: #EBF2F2;
+  color: #1B1F23; }
+  .contents-header.dark {
+    background-color: #262A2D;
+    color: #FFF; }
+  .contents-header__box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0; }
+  .contents-header__title {
+    font-size: 2rem; }
+  .contents-header__period {
+    font-size: 1.2rem; }
+    @media only screen and (max-width: 56.25em) {
+      .contents-header__period {
+        font-size: 1.1rem; } }
+  .contents-header__buttons *:not(:last-child) {
+    margin-right: 1rem; }
+
+.contents-body {
+  background-color: #FFF;
+  color: #1B1F23;
+  padding: 2rem 0; }
+  .contents-body.dark {
+    background-color: #1B1F23;
+    color: #FFF; }
+  .contents-body__description {
+    font-family: 'Nunito', sans-serif; }
+    .contents-body__description h1 {
+      font-size: 2.1rem; }
+    .contents-body__description h2 {
+      font-size: 1.9rem; }
+    .contents-body__description h3 {
+      font-size: 1.7rem; }
+    .contents-body__description h4 {
+      font-size: 1.5rem; }
+    .contents-body__description p {
+      font-size: 1.5rem;
+      font-weight: 400; }
+    .contents-body__description li {
+      font-size: 1.5rem;
+      font-weight: 400; }
+    .contents-body__description ol, .contents-body__description ul, .contents-body__description dl {
+      margin-top: 0;
+      margin-bottom: 1rem; }
+    .contents-body__description ul {
+      display: block;
+      list-style-type: disc;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0;
+      margin-inline-end: 0;
+      padding-inline-start: 40px; }
+    .contents-body__description a:visited, .contents-body__description a:link {
+      text-decoration: none;
+      color: #eb2f64;
+      transition: opacity .2s ease-in-out;
+      font-size: 1.8rem; }
+      .contents-body__description a:visited:hover, .contents-body__description a:link:hover {
+        opacity: .6; }
+    .contents-body__description img {
+      object-fit: cover; }
+      @media only screen and (max-width: 75em) {
+        .contents-body__description img {
+          width: 900px; } }
+      @media only screen and (max-width: 68.75em) {
+        .contents-body__description img {
+          width: 800px; } }
+      @media only screen and (max-width: 56.25em) {
+        .contents-body__description img {
+          width: 700px; } }
+      @media only screen and (max-width: 750px) {
+        .contents-body__description img {
+          width: 100%; } }
+      @media only screen and (max-width: 43.75em) {
+        .contents-body__description img {
+          width: 100%; } }
+      @media only screen and (max-width: 600px) {
+        .contents-body__description img {
+          width: 100%; } }
+      @media only screen and (max-width: 34.38em) {
+        .contents-body__description img {
+          width: 100%; } }
+
+.contents-footer {
+  padding: 1.5rem 0;
+  background-color: #EBF2F2;
+  color: #1B1F23; }
+  .contents-footer.dark {
+    background-color: #262A2D;
+    color: #FFF; }
+  .contents-footer__title {
+    font-size: 2rem; }
+  .contents-footer__skills {
+    display: flex;
+    flex-wrap: wrap;
+    width: 250px; }
+    .contents-footer__skills *:not(:last-child) {
+      margin-right: .6rem; }
+  .contents-footer__skill {
+    list-style: none;
+    padding: .4rem .8rem;
+    color: white !important;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 3px;
+    margin: .6rem 0; }

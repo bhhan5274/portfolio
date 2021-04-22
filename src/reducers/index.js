@@ -4,6 +4,7 @@ import nav from "./navReducer";
 import projects from "./projectsReducer";
 import project from './projectReducer';
 import skill from "./skillReducer";
+import image from "./imageReducer";
 
 export default combineReducers({
     mode,
@@ -11,4 +12,5 @@ export default combineReducers({
     projects,
     project,
     skill,
+    image,
 });
