@@ -36,7 +36,7 @@ const makePaging = (projects, getPageProjects) => {
     }
 
     pagingItems.push(<PagingUtilIcon number={lastNumber > currentNumber ? currentNumber + 1 : currentNumber} type="fas fa-angle-right" getPageProjects={getPageProjects} key={key++}/>);
-    pagingItems.push(<PagingUtilIcon number={lastNumber} type="fas fa-angle-double-right" getPageProjects={getPageProjects} key={key++}/>);
+    pagingItems.push(<PagingUtilIcon number={lastNumber === 0 ? 1 : lastNumber} type="fas fa-angle-double-right" getPageProjects={getPageProjects} key={key++}/>);
 
     return pagingItems;
 };

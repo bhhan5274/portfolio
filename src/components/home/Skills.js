@@ -11,22 +11,22 @@ const Skills = ({mode}) => {
                     <Link className={mode === true ? "skills-info__item" : "skills-info__item dark"} to='/skills'>
                         <i className="fas fa-file-code" />
                         <h1 className="skills-info__subject">Application</h1>
-                        <p className="skills-info__content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it</p>
+                        <p className="skills-info__content">펌웨어 / 윈도우 응용프로그램</p>
                     </Link>
                     <Link className={mode === true ? "skills-info__item" : "skills-info__item dark"} to='/skills'>
                         <i className="fas fa-desktop" />
                         <h1 className="skills-info__subject">Frontend</h1>
-                        <p className="skills-info__content">askn dlasdnalsdnasdsadas kasksaasdasd asdasdasdadsasd asdsadasdadas fdsklfslhfslkhfslkhd adksljadlkjadlkadjs asdlkjasdlakjsdlkasj </p>
+                        <p className="skills-info__content">HTML/CSS/jQuery 웹 퍼블리싱<br />React SPA 개발</p>
                     </Link>
                     <Link className={mode === true ? "skills-info__item" : "skills-info__item dark"} to='/skills'>
                         <i className="fas fa-server" />
                         <h1 className="skills-info__subject">Backend</h1>
-                        <p className="skills-info__content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it</p>
+                        <p className="skills-info__content">Spring Boot REST API 서버 구축<br />도메인 모델 설계</p>
                     </Link>
                     <Link className={mode === true ? "skills-info__item" : "skills-info__item dark"} to='/skills'>
                         <i className="fas fa-cogs" />
                         <h1 className="skills-info__subject">DevOps</h1>
-                        <p className="skills-info__content">Lorempsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it</p>
+                        <p className="skills-info__content">CI/CD 파이프라인 구축<br />소스코드 형상 관리<br />클라우드 리소스 활용</p>
                     </Link>
                 </div>
             </div>

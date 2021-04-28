@@ -11,6 +11,7 @@ const Projects = ({mode, dispatch, projects}) => {
     const getPageProjects = async (page) => {
         try{
             const res = await axios.get(`${process.env.REACT_APP_SERVER_URL}/career/v1/projects?page=${page}&size=6&sort=id,desc`);
+
             dispatch({
                 type: GET_PROJECTS,
                 payload: res.data

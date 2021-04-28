@@ -84,7 +84,7 @@
     transition: all .2s ease-in-out;
 
     @media only screen and (max-width: $bp-smallest) {
-      align-items: center;
+      align-items: flex-start;
       font-size: 1.8rem;
     }
 

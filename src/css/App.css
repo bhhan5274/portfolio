@@ -421,7 +421,7 @@ body {
     transition: all .2s ease-in-out; }
     @media only screen and (max-width: 34.38em) {
       .banner__subject {
-        align-items: center;
+        align-items: flex-start;
         font-size: 1.8rem; } }
     .banner__subject div {
       z-index: 1; }
@@ -496,7 +496,7 @@ body {
       margin: 2.5rem 0 1.5rem 0;
       transition: all .2s ease-in-out; }
     .skills-info__item p {
-      font-size: 1.7rem;
+      font-size: 1.4rem;
       text-align: center;
       color: #262A2D; }
     .skills-info__item i {
@@ -908,7 +908,7 @@ body {
     width: 55px;
     height: 55px;
     overflow: hidden;
-    border-radius: 50%;
+    border-radius: 5px;
     margin-right: 1.5rem; }
     @media only screen and (max-width: 68.75em) {
       .skill-intro__image {

@@ -7,7 +7,7 @@ import TextLoop from "react-text-loop";
 const Banner = ({mode}) => {
     const [ontions, setOptions] = useState([
         '웹 개발자 💻 입니다.',
-        '클린 코드를 📝 만듭니다.',
+        '클린코드 📝 작성을 노력합니다.',
         '풀스택 개발자를 🌟 꿈꿉니다.',
         '신뢰와 협동을 👪 중요시합니다.'
     ]);
@@ -22,8 +22,8 @@ const Banner = ({mode}) => {
                             <TextLoop mask={true} children={ontions} />
                         </span>
                         <p>마이크로서비스와 DevOps에 관심이 많습니다.</p>
-                        <p>임베디드 > 응용프로그램 > 웹개발을 합니다.</p>
-                        <p>항상 많이 배우겠습니다.</p>
+                        <p>어제보다 더 나은 개발자로 성장하기 위해</p>
+                        <p>꾸준히 노력하고 있습니다.</p>
                     </div>
                 </div>
                 <div className="banner__gallery">
