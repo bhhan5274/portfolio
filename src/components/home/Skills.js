@@ -21,7 +21,7 @@ const Skills = ({mode}) => {
                     <Link className={mode === true ? "skills-info__item" : "skills-info__item dark"} to='/skills'>
                         <i className="fas fa-server" />
                         <h1 className="skills-info__subject">Backend</h1>
-                        <p className="skills-info__content">Spring Boot REST API 서버 구축<br />도메인 모델 설계</p>
+                        <p className="skills-info__content">SpringFramework 서버 구축<br />도메인 모델 설계</p>
                     </Link>
                     <Link className={mode === true ? "skills-info__item" : "skills-info__item dark"} to='/skills'>
                         <i className="fas fa-cogs" />

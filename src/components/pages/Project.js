@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import ProjectGallery from "../project/ProjectGallery";
 import ProjectContents from "../project/ProjectContents";
 
-const Project = ({mode, dispatch, project, setImage, match: {params: {id}}}) => {
+const Project = ({mode, dispatch, project, match: {params: {id}}}) => {
     const getProject = async (id) => {
         try{
             const res = await axios.get(`${process.env.REACT_APP_SERVER_URL}/career/v1/projects/${id}/view`);
@@ -34,7 +34,7 @@ const Project = ({mode, dispatch, project, setImage, match: {params: {id}}}) => 
 
     return (
         <Fragment>
-            <ProjectGallery project={project} setImage={setImage}/>
+            <ProjectGallery mode={mode} project={project} />
             <ProjectContents mode={mode} project={project} />
         </Fragment>
     );

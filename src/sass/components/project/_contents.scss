@@ -36,7 +36,7 @@
 .contents-body {
   background-color: $white-primary-color;
   color: $dark-primary-color;
-  padding: 2rem 0;
+  padding: 4rem 0;
 
   &.dark {
     background-color: $dark-primary-color;
@@ -83,7 +83,8 @@
       text-decoration: none;
       color: $primary-color;
       transition: opacity .2s ease-in-out;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
+      font-weight: bold;
 
       &:hover {
         opacity: .6;

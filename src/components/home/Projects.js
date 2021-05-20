@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import {Link} from 'react-router-dom';
 import removeDayFromDate from "../../utils/removeDayFromDate";
 
-const CustomSlide = ({id, images, member, skills, timeRange, title, mode}) => {
+const CustomSlide = ({id, images, member, timeRange, title, mode}) => {
     return (
         <Link className={"projects-info__item " + (mode === true ? "" : "dark")} to={`/projects/${id}`}>
             <div className="projects-info__image-box">
@@ -23,15 +23,6 @@ const CustomSlide = ({id, images, member, skills, timeRange, title, mode}) => {
                         &nbsp;<span>{member}</span>
                     </span>
                 </div>
-                <ul className={"projects-info__skills " + (mode === true ? "" : "dark")}>
-                    {skills.map((skill, index) => (
-                        <li className="projects-info__skill" key={index}>
-                            <div>
-                                <img src={skill.path} alt="skill" />
-                            </div>
-                        </li>
-                    ))}
-                </ul>
             </div>
         </Link>
     );
